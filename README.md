@@ -76,24 +76,34 @@ new_df.describe(include='all')
 
 Hasil keterangan dari code berikut adalah :
 1️⃣ Karakteristik Karyawan
+
 Usia rata-rata adalah sekitar 36,9 tahun, dengan rentang usia dari 18 hingga 60 tahun.
 Jumlah tahun bekerja di perusahaan memiliki rata-rata 7 tahun, tetapi ada karyawan yang sudah bekerja hingga 40 tahun.
 Rata-rata tahun dalam peran saat ini adalah sekitar 4,2 tahun, menunjukkan adanya stabilitas dalam posisi pekerjaan.
+
 2️⃣ Kesejahteraan & Kepuasan
+
 Keseimbangan kehidupan kerja memiliki nilai rata-rata 2,72, menunjukkan bahwa beberapa karyawan mungkin mengalami tantangan dalam menyeimbangkan pekerjaan dan kehidupan pribadi.
 Kepuasan pekerjaan memiliki distribusi yang cukup luas, dari 1 (sangat tidak puas) hingga 4 (sangat puas), dengan median sekitar 3.
 Kepuasan lingkungan kerja juga bervariasi, dengan angka tertinggi mencapai 4.
+
 3️⃣ Gaji dan Insentif
+
 Pendapatan bulanan rata-rata adalah sekitar 14.313, dengan nilai minimum 2094 dan maksimum 26.999. Ini menunjukkan adanya kesenjangan yang cukup besar dalam distribusi gaji.
 Karyawan dengan opsi saham tampaknya memiliki beberapa tingkatan berbeda, meskipun ini tidak dijelaskan dalam data.
 Peningkatan gaji tahunan memiliki nilai rata-rata 2,91%, yang mungkin mempengaruhi kepuasan dan motivasi kerja.
+
 4️⃣ Perjalanan Bisnis & Departemen
+
 Mayoritas karyawan jarang melakukan perjalanan bisnis (Travel_Rarely muncul sebanyak 1043 kali).
 Departemen terbesar adalah Research & Development, yang memiliki 961 karyawan dibandingkan departemen lain seperti Sales atau HR.
+
 5️⃣ Promosi & Rotasi
+
 Rata-rata waktu sejak promosi terakhir adalah sekitar 7 tahun, dengan beberapa karyawan yang belum mendapatkan promosi selama 40 tahun.
 Beberapa karyawan tidak mengalami perpindahan perusahaan, tetapi ada yang memiliki pengalaman bekerja di beberapa perusahaan sebelum ini.
-Kesimpulan
+
+*Kesimpulan*
 Data ini menunjukkan pola yang menarik terkait kepuasan kerja, keseimbangan kehidupan kerja, serta struktur gaji dan perjalanan bisnis. Jika dianalisis lebih lanjut, mungkin bisa ditemukan hubungan antara kepuasan kerja dan faktor-faktor seperti gaji, perjalanan bisnis, atau kesempatan promosi.
 
 Untuk dapat memahami lebih lanjut maka dapat dibuat visualisasi berikut ini
