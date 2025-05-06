@@ -75,6 +75,7 @@ Untuk melihat data lebih detail maka code berikut digunakan:
 new_df.describe(include='all')
 
 Hasil keterangan dari code berikut adalah :
+
 1️⃣ Karakteristik Karyawan
 
 Usia rata-rata adalah sekitar 36,9 tahun, dengan rentang usia dari 18 hingga 60 tahun.
@@ -110,5 +111,172 @@ Untuk dapat memahami lebih lanjut maka dapat dibuat visualisasi berikut ini
 
 ![image](https://github.com/user-attachments/assets/76390cd9-0e06-4fb1-b129-6c22d1197d96)
 
+Hasil visualisasi histogram tesebut menunjukkan jumlah karyawan yang keluar lebih banyak dari yang masih bekerja.
+
+Dominasi Karyawan Muda: Distribusi usia menunjukkan perusahaan memiliki banyak karyawan muda, yang mungkin berkaitan dengan tingginya attrition pada masa kerja awal.
+
+Tingkat Attrition Tinggi di Awal Karir: Karyawan baru cenderung lebih sering mengundurkan diri, yang ditunjukkan oleh data years at company yang didominasi oleh pekerja dengan lama kerja 0-10 tahun
+
+Kepuasan Sedang: Nilai kepuasan kerja dan lingkungan tidak terlalu tinggi (rata-rata 3.0–3.5), mengindikasikan perlunya perbaikan di area tertentu.
+
+Keseimbangan Hidup-Kerja Cukup Baik: Meski tidak ideal, karyawan merasa cukup nyaman dengan keseimbangan ini.
+
+![image](https://github.com/user-attachments/assets/f6cbe5e9-fada-4380-b2ad-e4c294edd8bb)
+
+Hasil visualisasi pairplot menunjukkan secara umum tidak ada gambar khusus yang meunjukkan pola pengaruh linear. Indikasi hanya pada variabel lama bekerja di perusahaan year at the company.
+
+![image](https://github.com/user-attachments/assets/7f8b9698-8ede-4555-b80c-f560f849a225)
+
+Matriks korelasi menunjukkan hubungan linier antar variabel numerik dalam dataset karyawan. Nilai berkisar dari -1 (korelasi negatif sempurna) hingga 1 (korelasi positif sempurna). Nilai mendekati 0 menunjukkan tidak ada hubungan. Beberapa pola penting yang teridentifikasi:
+
+Korelasi Signifikan
+
+Age (Usia) vs. MonthlyIncome (Pendapatan Bulanan) = Korelasi: 0.50. Interpretasi: Karyawan dengan usia lebih tinggi cenderung memiliki pendapatan lebih besar. Ini mungkin terkait pengalaman atau jenjang karir.
+
+YearsAtCompany (Lama Bekerja) vs. YearsInCurrentRole (Lama di Posisi Saat Ini) = Korelasi: 0.76. Interpretasi: Hubungan sangat kuat. Karyawan yang lama di perusahaan cenderung menempati posisi yang sama dalam waktu panjang.
+
+YearsAtCompany vs. MonthlyIncome = Korelasi: 0.51. Interpretasi: Karyawan dengan masa kerja panjang umumnya memiliki pendapatan lebih tinggi (efek kenaikan gaji tahunan/promosi).
+
+Attrition (Pengunduran Diri) vs. Age = Korelasi: -0.17. Interpretasi: Karyawan muda lebih mungkin mengundurkan diri.
+
+Attrition vs. MonthlyIncome = Korelasi: -0.16. Interpretasi: Karyawan dengan pendapatan rendah lebih rentan resign.
+
+Attrition vs. MonthlyIncome = Korelasi: -0.16. Interpretasi: Karyawan dengan pendapatan rendah lebih rentan resign.
+
+Attrition vs. Joblevel = Korelasi: -0.17. Interpretasi: Karyawan dengan posisi rendah lebih rentan resign.
+
+![image](https://github.com/user-attachments/assets/34a92c44-d05e-4daa-b458-0f7d28941a0a)
+
+Data tersebut menjelaskan bahwa karyawan terbanyak adalah dari bagian RnD. Karyawan ini jarang melakukan perjalanan bisnis dan jarang untuk melakukan lebur.
 
 
+# 2. Data Preperation
+Pada tahap ini, olah data dilakukan untuk mempersiapkan data untuk modeling. Tahapan ini dilakukan dengan cara:
+
+1. Melakukan perbaikan data,
+2. Pembersihan data
+
+Karena tipe data tidak memiliki masalah, maka data preparataion akan dilakukan dengan pembersihan data.
+
+![image](https://github.com/user-attachments/assets/b386554d-0512-473b-ad63-a0287d990cd2)
+
+Pembersiah data dilakukan terhadap data data kosong atau missing value pada variabel attrition. Hasilnya adalah terdapat 1058 data yang siap untuk diolah lebih lanjut.
+
+![image](https://github.com/user-attachments/assets/dd5abcb3-3b3b-4e64-a5e4-61c71dd9f833)
+
+Setelah data dibersihakn, maka dapat dihitung berapa persen karyawan yang tetap dan yang keluar. Nilai 1 untuk menunjukkan status karyawan yang sudah keluar dan nilai 0 menunjukkan karyawan yang masih bekerja. Hasil menunjukkan bahwa karyawan yang keluar adalah 16.9% dari keseluruhan karyawan.
+
+# 3. Modeling
+Pada bagian modeling, data akan disusun dalam model untuk dapat melihat faktor apa yang mempengaruhi attretion karyawan.
+
+Untuk membuat model ini ditentukan variabel y adalah attrition, variabel x adalah semua variabel yang memiliki tipe data numeric. Model yang dengan bangun menggunakan regresi logistik.
+
+Tujuan dari regresi ini adalah untuk melihat dampak bagaimana pengaruh faktor-faktor tersebut terhadap kemungkinan karyawan untuk keluar.
+
+![image](https://github.com/user-attachments/assets/391e1642-61f4-4c3f-b3fd-b4d09b32a12a)
+
+Hasilnya:
+
+![image](https://github.com/user-attachments/assets/b0fd533b-7681-446c-addd-fb455506c2d7)
+
+Berikut adalah interpertasi dari hasil regresi logistik
+
+Variabel	Koefisien	Arah Pengaruh	Keterangan
+Age	-0.0332	Negatif	Semakin tua, semakin kecil kemungkinan keluar.
+DistanceFromHome	0.0263	Positif	Semakin jauh jarak dari rumah, semakin besar kemungkinan keluar.
+EnvironmentSatisfaction	-0.3395	Negatif	Kepuasan lingkungan kerja menurunkan attrition.
+JobInvolvement	-0.5781	Negatif	Keterlibatan kerja yang tinggi mengurangi attrition.
+JobSatisfaction	-0.2940	Negatif	Kepuasan kerja menurunkan attrition.
+WorkLifeBalance	-0.2747	Negatif	Keseimbangan hidup-kerja lebih baik mengurangi attrition.
+YearsInCurrentRole	-0.1403	Negatif	Lama di posisi sekarang → lebih kecil kemungkinan keluar.
+YearsSinceLastPromotion	0.1354	Positif	Semakin lama sejak promosi terakhir → lebih besar kemungkinan keluar.
+Makna temuan hasil
+
+Faktor uang (gaji, pendapatan harian/bulanan) tidak terbukti signifikan mempengaruhi attrition dalam model ini.
+
+Faktor psikologis dan lingkungan kerja seperti JobSatisfaction, EnvironmentSatisfaction, dan JobInvolvement justru lebih kuat berpengaruh.
+
+Hal ini menunjukkan bahwa untuk mengurangi attrition, perusahaan sebaiknya fokus pada peningkatan kepuasan kerja dan lingkungan kerja, bukan hanya menaikkan gaji.
+
+Model
+
+image.png
+
+logit(p) = 4.6009 - 0.0332(Age) + 0.0263(DistanceFromHome) - 0.3395(EnvironmentSatisfaction) - 0.5781(JobInvolvement) - 0.2940(JobSatisfaction) - 0.2747(WorkLifeBalance) - 0.0156(YearsAtCompany) - 0.1403(YearsInCurrentRole) + 0.1354(YearsSinceLastPromotion)
+
+![image](https://github.com/user-attachments/assets/545171ae-89aa-4ef7-a867-11fbd8c31da4)
+
+**Interpretasi Hasil**
+
+Variabel signifikan negatif (mencegah attrition): JobInvolvement: Koefisien negatif besar (sekitar -0.58), artinya semakin tinggi keterlibatan kerja, semakin kecil kemungkinan karyawan keluar.
+
+Environment Satisfaction, Job Satisfaction, Work Life Balance, Years In CurrentRole, Age: Semua ini memiliki efek negatif terhadap attrition — artinya, kepuasan, keseimbangan hidup-kerja, dan senioritas mengurangi risiko keluar.
+
+Variabel signifikan positif (meningkatkan attrition): Distance FromHome: Semakin jauh jarak ke kantor, semakin besar kemungkinan karyawan keluar.
+
+Years Since Last Promotion: Semakin lama tidak dipromosikan, semakin tinggi kemungkinan keluar.
+
+Variabel tidak signifikan (abu-abu): MonthlyIncome, MonthlyRate, DailyRate, EmployeeId, Education, PerformanceRating, JobLevel, YearsAtCompany → Semua ini tidak terbukti punya pengaruh yang berarti terhadap attrition, meskipun secara umum sering dianggap relevan.
+
+Makna Visualisasi
+
+Visualisasi ini memperkuat kesimpulan sebelumnya bahwa faktor-faktor psikologis dan keterlibatan kerja lebih penting daripada faktor finansial seperti gaji.
+
+Variabel yang secara signifikan memengaruhi attrition dapat menjadi target intervensi HR, seperti:
+
+Meningkatkan kepuasan kerja dan keterlibatan.
+
+Memperhatikan promosi tepat waktu.
+
+Mengelola keseimbangan kerja–hidup karyawan.
+
+# 4. Evaluasi model
+Pada tahap ini model dan hasil yang sudah dibuat sebelumnya akan dievaluasi tingkat akurasi dari hasil tersebut.
+
+Model telah dibangun dengan Regresi Logistik, nilai koefisien akan memprediksi kemungkinan terjadinya attrition. Namun model dan nilai koefisien perlu dievaluasi.
+
+![image](https://github.com/user-attachments/assets/a7b5a84f-2f9d-4361-b760-9b18372a329d)
+
+Hasilnya:
+![image](https://github.com/user-attachments/assets/ff40b063-794d-466d-a76b-ee4e530e340b)
+
+**Penjelasan** 
+
+Walaupun model memiliki akurasi tinggi 81%. Namun Model ini gagal dalam mendeteksi karyawan yang akan keluar, meskipun akurasinya tampak tinggi. Anda perlu menangani ketidakseimbangan data agar model menjadi benar-benar berguna untuk prediksi attrition.
+
+Hal ini mungkin dikarenakan regresi logistik menilai kemungkinan dari suatu faktor y.
+
+Untuk melakukan evaluasi model maka digunakan model KNN, RF, Boosting. Evaluasi model dilakukan dengan mse.
+
+![image](https://github.com/user-attachments/assets/5cd74b0d-94fb-4bab-a4fa-f62db59264eb)
+
+Hasil
+
+![image](https://github.com/user-attachments/assets/c4d19725-55c7-443f-ac2a-b3e997003b92)
+
+Visualisasinya adalah sebagai berikut:
+
+![image](https://github.com/user-attachments/assets/518dec89-0f73-44ce-a610-926fabf01b7f)
+
+Penjelasan:
+
+
+KNN: Sangat lambat saat prediksi (test), karena menghitung jarak ke semua data latih.
+
+Boosting: Berat di dua sisi — butuh waktu lama saat pelatihan dan prediksi.
+
+Random Forest: Cepat saat train, tapi agak lambat saat prediksi dalam visualisasi ini.
+
+Trade-off yang ditampilkan: kecepatan vs kompleksitas dari masing-masing algoritma.
+
+# 5. Kesimpulan
+
+Proyek ini menjelaskan faktor apa yang menyebabkan attrition karyawan. Hasil model ini mengindikasikan bahwa faktor yang menyebabkan karyawan keluar / attrition adalah:
+
+JobInvolvement: Koefisien negatif besar semakin kecil kemungkinan karyawan keluar.
+
+Environment Satisfaction, Job Satisfaction, Work Life Balance, Years In CurrentRole, Age: Semua ini memiliki efek negatif terhadap attrition — artinya, kepuasan, keseimbangan hidup-kerja, dan senioritas mengurangi risiko keluar.
+
+Variabel signifikan positif (meningkatkan attrition): Distance From Home: Semakin jauh jarak ke kantor, semakin besar kemungkinan karyawan keluar.
+
+Years Since Last Promotion: Semakin lama tidak dipromosikan, semakin tinggi kemungkinan keluar.
