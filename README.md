@@ -1,26 +1,24 @@
-# DS-Terapan_Proyek_Pertama
+# Proyek Pertama: Identifikasi Masalah Attrition HR
 Proyek Pertama DS Terapan untuk menjelaskan faktor apa yang menyebabkan Attrition HR mencapai 10%. 
 nama : Novianto
+ID: novianto_14b
 
-Link dashboard
-
-https://public.tableau.com/views/ProjectpertamaDSTerapan/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 # Business Understanting
 Jaya Jaya Maju merupakan salah satu perusahaan multinasional yang telah berdiri sejak tahun 2000. Ia memiliki lebih dari 1000 karyawan yang tersebar di seluruh penjuru negeri. Walaupun telah menjadi menjadi perusahaan yang cukup besar, Jaya Jaya Maju masih cukup kesulitan dalam mengelola karyawan. Hal ini berimbas tingginya attrition rate (rasio jumlah karyawan yang keluar dengan total karyawan keseluruhan) hingga lebih dari 10%.
 
-Business problem
+## Business problem
 
 Dari latar belakang tersebut pertanyaan yang diajukan dalam project ini adalah
 1. Faktor apa yang mempengaruhi attririon
 
-Project Scope
+## Project Scope
 Untuk menjawab permasalah bisnis tersebut maka aktivitas dalam project ini meliput:
 
 1. Pemahaman data untuk menjelaskan secara deskripsi data
 2. Menemukan faktor yang mempengaruhi attrition
 
-Persiapan
+## Persiapan
 untuk menjelakan project ini, data yang diperlukan diambil dari case dicoding yang diberikan dengan akses berikut: https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee
 
 Untuk olah data, project ini menggunakan Google Colab dengan pemrograman pyton.
@@ -31,7 +29,10 @@ pada bagian ini akan dilakukan untuk menjelaskan data makna dalam dataset.
 ![image](https://github.com/user-attachments/assets/d6bdb57a-b644-4f3d-8e5f-2fe5bbd5c7a8)
 
 Hasilnya adalah berikut
+
+
 ![image](https://github.com/user-attachments/assets/19b1081b-55a1-40d2-bea7-57d1dc7d06f1)
+
 
 Berikut adalah arti dari masing-masing elemen dalam hasil data:
 
@@ -269,6 +270,22 @@ Random Forest: Cepat saat train, tapi agak lambat saat prediksi dalam visualisas
 
 Trade-off yang ditampilkan: kecepatan vs kompleksitas dari masing-masing algoritma.
 
+# Business Dashboard
+
+Link dashboard
+
+https://public.tableau.com/views/ProjectpertamaDSTerapan/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+![novianto_j41b-dashboard](https://github.com/user-attachments/assets/5a54598e-797a-4b48-ac13-b7f6cd8adfee)
+
+Dashboar tersebut menunjukkan bahwa 
+
+1. Jumlah karyawan yang keluar (179) lebih sedikit dibandingkan dengan yang masih bekerja (879)
+2. Secara rata-rata jumlah karyawan yang keluar berdasarkan gender tidak memiliki perbedaan yang besar. Hal ini menunjukkan bahwa karyawan pria atau wanita memiliki kemungkinan yang sama untuk keluar.
+3. Secara rata-rata, karyawan yang keluar lebih didominasi oleh karyawan berstatus singel.
+4. Perbandingan secara rata-rata terkait dengan faktor psikologi kerja (lingkungan kerja, keterlibatan kerja, tingkat jabatan, tingkat keluasan) tidak memiliki selisih yang tinggi antara karyawan yang keluar dan yang tetap bekerja. Namun rata-rata karyawan yang tetap bekerja memiliki nilai lebih tinggi dari pada karyawan yang keluar.
+5. Selisih rata-rata yang besar ada pada jarak rumah dengan tempat kerja. Pada karyawan yang keluar memiliki rata-rata jarak rumah yang lebih jauh dari pada kelompok karyawan yang mtetap bekerja. 
+
 # 5. Kesimpulan
 
 Proyek ini menjelaskan faktor apa yang menyebabkan attrition karyawan. Hasil model ini mengindikasikan bahwa faktor yang menyebabkan karyawan keluar / attrition adalah:
@@ -280,3 +297,11 @@ Environment Satisfaction, Job Satisfaction, Work Life Balance, Years In CurrentR
 Variabel signifikan positif (meningkatkan attrition): Distance From Home: Semakin jauh jarak ke kantor, semakin besar kemungkinan karyawan keluar.
 
 Years Since Last Promotion: Semakin lama tidak dipromosikan, semakin tinggi kemungkinan keluar.
+
+## 5.1. Rekomendasi Action Items
+
+Dari hasil deskriptif dan analisa yang dilakukan maka rekomendasi untuk mengurangi tingkat attrition:
+
+Peningkatan faktor psikologi kerja seperti kepuasan dan keterlibatan karyawan perlu ditingkatkan untuk dapat mengurangi tingkat attrition.
+Perusahaan dapat membantu untuk karyawan memiliki tempat tinggal atau bertempat tinggal yang dekat dengan kantor untuk mengurangi tingkat attrition
+Perusanaan perlu memperbaiki sistem promosi dengan memberikan kejelasan tahapan dan waktu pencapaian promosi untuk mengurangi attrition, karena semakin lama promosi maka kecenderungan karyawan untuk keluar semakin tinggi.
