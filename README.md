@@ -21,6 +21,9 @@ Untuk menjawab permasalah bisnis tersebut maka aktivitas dalam project ini melip
 ## Persiapan
 untuk menjelakan project ini, data yang diperlukan diambil dari case dicoding yang diberikan dengan akses berikut: https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee
 
+Atau data set asli diambil dari link berikut:
+https://www.ibm.com/communities/analytics/watson-analytics-blog/watson-analytics-use-case-for-hr-retaining-valuable-employees/
+
 Data tersebut berisi tentang demografi karyawan yang meliputi:
 
 1. EmployeeId - Employee Identifier
