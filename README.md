@@ -21,6 +21,43 @@ Untuk menjawab permasalah bisnis tersebut maka aktivitas dalam project ini melip
 ## Persiapan
 untuk menjelakan project ini, data yang diperlukan diambil dari case dicoding yang diberikan dengan akses berikut: https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee
 
+Data tersebut berisi tentang demografi karyawan yang meliputi:
+
+1. EmployeeId - Employee Identifier
+2. Attrition - Did the employee attrition? (0=no, 1=yes)
+3. Age - Age of the employee
+4. BusinessTravel - Travel commitments for the job
+5. DailyRate - Daily salary
+6. Department - Employee Department
+7. DistanceFromHome - Distance from work to home (in km)
+8. Education - 1-Below College, 2-College, 3-Bachelor, 4-Master,5-Doctor
+9. EducationField - Field of Education
+10. EnvironmentSatisfaction - 1-Low, 2-Medium, 3-High, 4-Very High
+11. Gender - Employee's gender
+12. HourlyRate - Hourly salary
+13. JobInvolvement - 1-Low, 2-Medium, 3-High, 4-Very High
+14. JobLevel - Level of job (1 to 5)
+15. JobRole - Job Roles
+16. JobSatisfaction - 1-Low, 2-Medium, 3-High, 4-Very High
+17. MaritalStatus - Marital Status
+18. MonthlyIncome - Monthly salary
+19. MonthlyRate - Mounthly rate
+20. NumCompaniesWorked - Number of companies worked at
+21. Over18 - Over 18 years of age?
+22. OverTime - Overtime?
+23. PercentSalaryHike - The percentage increase in salary last year
+24. PerformanceRating - 1-Low, 2-Good, 3-Excellent, 4-Outstanding
+25. RelationshipSatisfaction - 1-Low, 2-Medium, 3-High, 4-Very High
+26. StandardHours - Standard Hours
+27. StockOptionLevel - Stock Option Level
+28. TotalWorkingYears - Total years worked
+29. TrainingTimesLastYear - Number of training attended last year
+30. WorkLifeBalance - 1-Low, 2-Good, 3-Excellent, 4-Outstanding
+31. YearsAtCompany - Years at Company
+32. YearsInCurrentRole - Years in the current role
+33. YearsSinceLastPromotion - Years since the last promotion
+34. YearsWithCurrManager - Years with the current manager
+
 Untuk olah data, project ini menggunakan Google Colab dengan pemrograman pyton.
 Hasil olah data ditampilkan dalam dashboard
 
