@@ -24,6 +24,7 @@ untuk menjelakan project ini, data yang diperlukan diambil dari case dicoding ya
 Atau data set asli diambil dari link berikut:
 https://www.ibm.com/communities/analytics/watson-analytics-blog/watson-analytics-use-case-for-hr-retaining-valuable-employees/
 
+Data tersebut merupakan data demografi karyawan, data hubungan kerja, dan attrition dari suatu perusahaan. Total terdapat 34 data dalam dataset tersebut.
 Data tersebut berisi tentang demografi karyawan yang meliputi:
 
 1. EmployeeId - Employee Identifier
